@@ -4,8 +4,8 @@
   "description": "A socket.io strategy for Steeplejack",
   "main": "./index",
   "scripts": {
-    "build": "npm run clean && tsc --declaration --sourceMap --experimentalDecorators typings/main.d.ts index.ts",
-    "buildAll": "npm run clean && tsc --outDir ./tmp --sourceMap --experimentalDecorators typings/main.d.ts index.ts test/**/*.ts",
+    "build": "npm run clean && tsc --declaration --sourceMap --experimentalDecorators typings/index.d.ts index.ts",
+    "buildAll": "npm run clean && tsc --outDir ./tmp --sourceMap --experimentalDecorators typings/index.d.ts index.ts test/**/*.ts",
     "ci": "npm test && npm run coverage",
     "clean": "rm -Rf index.js lib/*.js index.js.map lib/*.js.map index.d.ts lib/*.d.ts tmp coverage",
     "coverage": "npm run buildAll && rm -Rf ./coverage && istanbul cover _mocha ./tmp/test/ -- --recursive ./tmp/test && remap-istanbul -i ./coverage/coverage.json -o ./coverage/lcov-report -t html&& remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json  && istanbul check-coverage ./coverage/coverage.json --statements=100 --functions=100 --branches=100 --lines=100",
@@ -39,8 +39,10 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.13.1"
   },
   "peerDependencies": {
+    "socket.io": "^1.0.0",
     "steeplejack": "^2.0.0-0"
   },
   "devDependencies": {
@@ -55,6 +57,7 @@
     "sinon": "^1.17.3",
     "sinon-as-promised": "^4.0.0",
     "sinon-chai": "^2.8.0",
+    "socket.io": "^1.4.8",
     "steeplejack": "^2.0.0-0",
     "tslint": "^3.6.0",
     "typescript": "^1.8.7",

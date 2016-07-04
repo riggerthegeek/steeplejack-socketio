@@ -18,6 +18,6 @@
     "typings"
   ],
   "files": [
-    "./typings/main.d.ts"
+    "./typings/index.d.ts"
   ]
 }
