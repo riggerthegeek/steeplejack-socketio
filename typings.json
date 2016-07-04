@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "es6-promise": "github:typings/typed-es6-promise#94aac67ef7a14a8de8e9e1d3c1f9a26caa0d9fb1"
+  },
+  "devDependencies": {
+    "proxyquire": "github:typed-typings/npm-proxyquire#e94c99bbac8d350e28edd70471d9460a5534927b"
+  },
+  "ambientDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#1c56e368e17bb28ca57577250624ca5bd561aa81"
+  },
+  "ambientDevDependencies": {
+    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#9c25433c84251bfe72bf0030a95edbbb2c81c9d5",
+    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#d6dd320291705694ba8e1a79497a908e9f5e6617",
+    "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#6e7d83167d86d857817bd492786f8304f5c4a0e4",
+    "sinon-chai": "github:DefinitelyTyped/DefinitelyTyped/sinon-chai/sinon-chai.d.ts#ceedbb35506c4b20867ddb495e8626ea04f38969"
+  }
+}

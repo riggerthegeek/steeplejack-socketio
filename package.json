@@ -1,0 +1,63 @@
+{
+  "name": "steeplejack-socketio",
+  "version": "0.0.0",
+  "description": "A socket.io strategy for Steeplejack",
+  "main": "./index",
+  "scripts": {
+    "build": "npm run clean && tsc --declaration --sourceMap --experimentalDecorators typings/main.d.ts index.ts",
+    "buildAll": "npm run clean && tsc --outDir ./tmp --sourceMap --experimentalDecorators typings/main.d.ts index.ts test/**/*.ts",
+    "ci": "npm test && npm run coverage",
+    "clean": "rm -Rf index.js lib/*.js index.js.map lib/*.js.map index.d.ts lib/*.d.ts tmp coverage",
+    "coverage": "npm run buildAll && rm -Rf ./coverage && istanbul cover _mocha ./tmp/test/ -- --recursive ./tmp/test && remap-istanbul -i ./coverage/coverage.json -o ./coverage/lcov-report -t html&& remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json  && istanbul check-coverage ./coverage/coverage.json --statements=100 --functions=100 --branches=100 --lines=100",
+    "lint": "tslint *.ts lib/*.ts",
+    "mocha": "npm run buildAll && mocha --recursive tmp/test/unit",
+    "postversion": "git push && git push --tags",
+    "test": "npm run lint && npm run mocha",
+    "typings": "typings install",
+    "watch:coverage": "onchange 'lib/**/*' 'test/**/*' -- npm run coverage",
+    "watch:test": "onchange 'lib/**/*' 'test/**/*' -- npm test"
+  },
+  "author": "Simon Emms <simon@simonemms.com>",
+  "contributors": [
+    {
+      "name": "Simon Emms",
+      "email": "simon@simonemms.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riggerthegeek/steeplejack-socketio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/riggerthegeek/steeplejack-socketio/issues"
+  },
+  "keywords": [
+    "steeplejack",
+    "steeplejack-plugin",
+    "socketio",
+    "socket-resource"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "steeplejack": "^2.0.0-0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "mongodb": "^2.1.14",
+    "onchange": "^2.1.2",
+    "proxyquire": "^1.7.4",
+    "remap-istanbul": "^0.5.1",
+    "sinon": "^1.17.3",
+    "sinon-as-promised": "^4.0.0",
+    "sinon-chai": "^2.8.0",
+    "steeplejack": "^2.0.0-0",
+    "tslint": "^3.6.0",
+    "typescript": "^1.8.7",
+    "typings": "^0.7.9"
+  }
+}
