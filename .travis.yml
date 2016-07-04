@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- node
+- '4.3'
+- iojs
+- '0.12'
+matrix:
+  fast_finish: true
+sudo: false
+before_script:
+- npm run typings
+script:
+- npm run ci
+before_deploy:
+- npm run build
+deploy:
+  provider: npm
+  email: simon@simonemms.com
+  api_key:
+    secure: 2dMEKZO0XXaimuDzfh/0k+fs1jE5/bRfkvS2/fZWhoP5SigCLowhpZHLHl/Dl3zelZpxZ24MimILKTdG1OJTiObJRSZpq6SvSY8XSMBMPYy6TSNTIK98DMkOAuBZkU9UqCL3OXyqSBxH/Zy2fpXwkUIdM7Tf4/Bm1Qz/xPb1UrZGVUJ6KBmu/UZVt48n3k9N/AkjUFT/WtfdS18sKB2I9uLVAfFcFszj8A/YxmXYB0sGaCloBK+586IXB2Xgz+yuVPTLpZ3j8b3Yklwegl02aLDp5zP4Q6/Rd4Ga+SIrMTtFsGPmjj59ogtNTdxwGsfB3ZXY2iJ955Nc1blb6Tqb0fnujpqh0yMwLMqLG8zkcCZ+HVYusl/H2EoMiVe5PXFvLG9V6MAHqLBS2Hp99huxp6jXgO8be4i60Mj5V8GBDo9seR86KQZaRK+MMB0To7t89WM+SjumArZN8JbSq+F/3IUu5+Wj3q4CTcQY5EWh8RPjPWVJlNyAEjJbKM2q2M4cpKEcXaZjfy7IpvO/dA4yELXky+0GgfB+tLZ+BIb9eSOb+M/fcwljj2QP2TuXbaajGk92xuILD6aVnfJia5OkMtDvlAXAoEEY/zbYRm0SE1S0Wq16ojZg+pyEtN59uC83mtQ9Cn2nZyNzteXWfNpygfoKYijX8EzSHMAMfhpDOyw=
+  on:
+    all_branches: true
+    tags: true
+    repo: riggerthegeek/steeplejack-socketio
