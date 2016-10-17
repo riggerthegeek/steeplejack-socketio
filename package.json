@@ -1,6 +1,6 @@
 {
   "name": "steeplejack-socketio",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A socket.io strategy for Steeplejack",
   "main": "./index",
   "scripts": {
