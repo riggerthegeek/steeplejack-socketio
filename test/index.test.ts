@@ -2,8 +2,6 @@
  * index.test
  */
 
-/// <reference path="../typings/index.d.ts" />
-
 "use strict";
 
 
@@ -190,6 +188,7 @@ describe("Socket.IO tests", function () {
             bodyParser: () => void;
             close: () => void;
             enableCORS: (origins: string[], addHeaders: string[]) => void;
+            getRawServer: () => Object;
             getServer: () => Object;
             gzipResponse: () => void;
             outputHandler: (statusCode: Number, data: any, request: any, result: any) => any;
